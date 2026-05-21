@@ -14,8 +14,8 @@ export const argentineMatches = [
     goals: [],
     description:
       'La final más dolorosa antes de Qatar. Higuaín falló dos manos a mano en el primer tiempo. En el minuto 113 del alargue, Schürrle centró y Götze la controló en el pecho y la volteó ante Romero. Messi ganó el Balón de Oro pero no pudo levantar la Copa. Ese dolor sembró la semilla de lo que vendría en 2022.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
+    highlightsYoutubeId: '8wTyv-5E5Kc',
+    fullMatchYoutubeId: '-YbZsM26GDI',
     fullMatchSearch: 'Argentina vs Germany 2014 World Cup Final full match',
   },
 
@@ -35,8 +35,8 @@ export const argentineMatches = [
     ],
     description:
       'La primera Copa del Mundo argentina, ganada en casa ante 71.000 personas. Kempes fue imparable: marcó el 1-0 en el primer tiempo, luego el 2-1 en el alargue tras una gambeta en el área. Bertoni cerró el marcador. El papel picado azul y blanco cayendo desde las tribunas del Monumental quedó grabado en la historia.',
-    highlightsYoutubeId: 'AE0iHiP5j7U',
-    fullMatchYoutubeId: null,
+    highlightsYoutubeId: 'Y8lHUkJlWw4',
+    fullMatchYoutubeId: '4tYQeqAdEGA',
     fullMatchSearch: 'Argentina vs Netherlands 1978 World Cup Final full match',
   },
 
@@ -56,8 +56,8 @@ export const argentineMatches = [
     ],
     description:
       'El mejor partido de la historia del fútbol. Argentina dominaba 2-0 cuando Mbappé marcó dos goles en 97 segundos. En el alargue, Messi volvió a marcar para el 3-2, pero Mbappé completó su hat-trick con un penal. En la definición, el Dibu atajó a Coman y Tchouaméni. Messi levantó la Copa del Mundo.',
-    highlightsYoutubeId: 'R0HHKMVKJHA',
-    fullMatchYoutubeId: 'R0HHKMVKJHA',
+    highlightsYoutubeId: 'RudDDIco3yc',
+    fullMatchYoutubeId: 'yGS7sX7BFqI',
     fullMatchSearch: 'Argentina vs France 2022 World Cup Final full match',
   },
 
@@ -75,8 +75,8 @@ export const argentineMatches = [
     ],
     description:
       'El partido más icónico de la historia del fútbol. En el minuto 51, "La Mano de Dios": Maradona tocó con la mano izquierda sin que el árbitro la viera. Cuatro minutos después marcó el "Gol del Siglo": partió desde el mediocampo y gambeteó a cinco jugadores ingleses. Lineker descontó pero fue tarde.',
-    highlightsYoutubeId: 'PBMsER3dHRg',
-    fullMatchYoutubeId: null,
+    highlightsYoutubeId: 'ZN3jcfJSJMY',
+    fullMatchYoutubeId: 'Pl3AnYCeTrU',
     fullMatchSearch: 'Argentina vs England 1986 World Cup quarter final full match',
   },
 
@@ -94,8 +94,8 @@ export const argentineMatches = [
     ],
     description:
       'Después del 0-3 ante Croacia, Argentina necesitaba ganar o quedaba eliminada. Messi controló de pecho, acomodó y clavó de zurda para el 1-0. Nigeria empató de penal. En el 86, Mercado centró, Rojo llegó desde atrás y voló la pelota al fondo de la red. El festejo de Messi fue el más desatado de su carrera.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
+    highlightsYoutubeId: 'RmlkAOwJ1gI',
+    fullMatchYoutubeId: 'ZZ44AAVAUvw',
     fullMatchSearch: 'Argentina vs Nigeria 2018 World Cup Rojo goal full match',
   },
 
