@@ -1,13 +1,5 @@
 import Countdown from './components/Countdown'
-import DailyMilestones from './components/DailyMilestones'
-import WorldCupSection from './components/WorldCupSection'
-import ArgentinaMatches from './components/ArgentinaMatches'
-
-const NAV_LINKS = [
-  { href: '#hitos',     label: 'Hitos' },
-  { href: '#planteles', label: 'Planteles' },
-  { href: '#partidos',  label: 'Partidos ARG' },
-]
+import DailyView from './components/DailyView'
 
 export default function App() {
   return (
@@ -16,17 +8,12 @@ export default function App() {
       <nav className="sticky top-0 z-50 bg-[#0a1a0f]/90 backdrop-blur border-b border-white/5">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <span className="font-black text-amber-400 text-lg tracking-tight">⚽ Camino al Mundial</span>
-          <div className="flex gap-1">
-            {NAV_LINKS.map(l => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-gray-400 hover:text-white text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
+          <a
+            href="#dias"
+            className="text-gray-400 hover:text-white text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Días →
+          </a>
         </div>
       </nav>
 
@@ -43,49 +30,35 @@ export default function App() {
             )`,
           }}
         />
-
         <div className="relative z-10 text-center px-4 pt-20 pb-16 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400
             text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
             <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
             Mundial 2026 · USA · Canada · Mexico
           </div>
-
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-none mb-4">
-            Camino al
-            <br />
-            <span className="text-amber-400">Mundial</span>
+            Camino al<br /><span className="text-amber-400">Mundial</span>
           </h1>
-
           <p className="text-gray-400 text-lg mb-12 max-w-md mx-auto">
-            Faltan solo días para que empiece el torneo más grande del mundo
+            Cada día que falta desbloquea un hito histórico, un plantel argentino, un equipo legendario y un partido para revivir
           </p>
-
           <Countdown />
-
-          <div className="flex justify-center gap-4 mt-12 flex-wrap">
-            {NAV_LINKS.map(l => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="border border-white/20 hover:border-amber-500/60 text-gray-300 hover:text-white
-                  text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:bg-amber-500/5"
-              >
-                {l.label} ↓
-              </a>
-            ))}
+          <div className="mt-10">
+            <a
+              href="#dias"
+              className="border border-white/20 hover:border-amber-500/60 text-gray-300 hover:text-white
+                text-sm font-semibold px-6 py-3 rounded-full transition-all hover:bg-amber-500/5 inline-block"
+            >
+              Ver el día de hoy ↓
+            </a>
           </div>
         </div>
       </header>
 
       <div className="h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent mx-4 max-w-5xl md:mx-auto" />
 
-      <main className="max-w-5xl mx-auto">
-        <DailyMilestones />
-        <div className="h-px bg-gradient-to-r from-transparent via-white/5 to-transparent mx-4" />
-        <WorldCupSection />
-        <div className="h-px bg-gradient-to-r from-transparent via-white/5 to-transparent mx-4" />
-        <ArgentinaMatches />
+      <main>
+        <DailyView />
       </main>
 
       <footer className="border-t border-white/5 py-8 text-center text-gray-600 text-sm">
@@ -93,8 +66,7 @@ export default function App() {
           Hecho con ❤️ para el Mundial 2026 ·{' '}
           <a
             href="https://github.com/CardozoBraianEzequiel/camino-al-mundial"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" rel="noopener noreferrer"
             className="hover:text-gray-400 transition-colors"
           >
             GitHub
