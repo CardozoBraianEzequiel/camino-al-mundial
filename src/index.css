@@ -6,9 +6,22 @@
 
 body {
   margin: 0;
-  background-color: #0a1a0f;
+  background-color: #060918;
   font-family: system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Franjas horizontales sutiles de la bandera argentina */
+.arg-stripes {
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(116, 172, 223, 0.055) 0px,
+    rgba(116, 172, 223, 0.055) 28px,
+    rgba(255, 255, 255, 0.018) 28px,
+    rgba(255, 255, 255, 0.018) 56px,
+    rgba(116, 172, 223, 0.055) 56px,
+    rgba(116, 172, 223, 0.055) 84px
+  );
 }
 
 @keyframes fadeInUp {
@@ -16,15 +29,34 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4); }
-  50%       { box-shadow: 0 0 0 8px rgba(251, 191, 36, 0); }
+@keyframes sol-glow {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(246, 185, 64, 0.5)); }
+  50%       { filter: drop-shadow(0 0 28px rgba(246, 185, 64, 0.85)); }
+}
+
+@keyframes sol-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse-celeste {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(116, 172, 223, 0.35); }
+  50%       { box-shadow: 0 0 0 8px rgba(116, 172, 223, 0); }
 }
 
 .animate-fade-up {
-  animation: fadeInUp 0.5s ease both;
+  animation: fadeInUp 0.4s ease both;
 }
 
-.pulse-gold {
-  animation: pulse-gold 2s infinite;
+.sol-spin {
+  animation: sol-spin 90s linear infinite;
+  transform-origin: center;
+}
+
+.sol-glow {
+  animation: sol-glow 3s ease-in-out infinite;
+}
+
+.pulse-celeste {
+  animation: pulse-celeste 2s infinite;
 }

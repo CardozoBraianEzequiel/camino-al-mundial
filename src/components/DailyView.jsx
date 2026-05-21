@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { dailyContent, getUnlockedDayCount } from '../data/daily'
 
+const CELESTE = '#74ACDF'
+const ORO     = '#F6B940'
+
 // ── Jersey SVG ────────────────────────────────────────────────────────────────
 function Jersey({ kit }) {
   const { primary, secondary, stripes } = kit
@@ -29,29 +32,35 @@ function Jersey({ kit }) {
 
 // ── Posición colores ───────────────────────────────────────────────────────────
 const POS_COLOR = {
-  POR: 'text-yellow-400 bg-yellow-400/10 border-yellow-500/30',
-  DEF: 'text-blue-400 bg-blue-400/10 border-blue-500/30',
-  MED: 'text-green-400 bg-green-400/10 border-green-500/30',
-  DEL: 'text-red-400 bg-red-400/10 border-red-500/30',
+  POR: { bg: 'rgba(246,185,64,0.12)',  border: 'rgba(246,185,64,0.35)',  text: '#F6B940' },
+  DEF: { bg: 'rgba(116,172,223,0.12)', border: 'rgba(116,172,223,0.35)', text: '#74ACDF' },
+  MED: { bg: 'rgba(134,239,172,0.10)', border: 'rgba(134,239,172,0.30)', text: '#86efac' },
+  DEL: { bg: 'rgba(248,113,113,0.10)', border: 'rgba(248,113,113,0.30)', text: '#f87171' },
 }
 
 // ── Panel: Hito ───────────────────────────────────────────────────────────────
 function MilestonePanel({ milestone }) {
   return (
-    <div className="bg-[#0e1f14] rounded-xl p-4 border border-white/5">
-      <p className="text-xs uppercase tracking-widest text-amber-400/70 font-medium mb-3 flex items-center gap-1.5">
+    <div
+      className="rounded-xl p-4"
+      style={{ background: 'rgba(10,18,40,0.8)', border: `1px solid ${CELESTE}18` }}
+    >
+      <p className="text-xs uppercase tracking-widest font-semibold mb-3" style={{ color: `${CELESTE}90` }}>
         🏅 Hito del día
       </p>
       <div className="flex items-start gap-3">
         <span className="text-2xl flex-shrink-0">{milestone.icon}</span>
         <div>
-          <div className="flex items-center gap-2 flex-wrap mb-1">
-            <span className="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/20 font-medium">
-              {milestone.year}
-            </span>
-          </div>
+          <span
+            className="text-xs font-bold px-2 py-0.5 rounded-full inline-block mb-1"
+            style={{ backgroundColor: `${ORO}18`, color: ORO, border: `1px solid ${ORO}35` }}
+          >
+            {milestone.year}
+          </span>
           <h4 className="text-white font-bold text-sm leading-snug mb-2">{milestone.title}</h4>
-          <p className="text-gray-400 text-xs leading-relaxed">{milestone.description}</p>
+          <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            {milestone.description}
+          </p>
         </div>
       </div>
     </div>
@@ -62,49 +71,78 @@ function MilestonePanel({ milestone }) {
 function SquadPanel({ squad, isArgentine }) {
   const [open, setOpen] = useState(false)
   const label = isArgentine ? '🇦🇷 Plantel Argentino' : '🌍 Plantel Histórico'
-  const resultColor =
-    squad.result === 'CAMPEÓN' ? 'bg-amber-500/15 text-amber-400 border-amber-500/30' :
-    squad.result === 'SUBCAMPEÓN' ? 'bg-gray-500/15 text-gray-300 border-gray-500/30' :
-    'bg-white/5 text-gray-500 border-white/10'
+
+  const resultStyle =
+    squad.result === 'CAMPEÓN'
+      ? { bg: `${ORO}18`, text: ORO, border: `${ORO}35` }
+      : squad.result === 'SUBCAMPEÓN'
+      ? { bg: 'rgba(180,180,180,0.12)', text: '#ccc', border: 'rgba(180,180,180,0.3)' }
+      : { bg: 'rgba(255,255,255,0.05)', text: 'rgba(255,255,255,0.4)', border: 'rgba(255,255,255,0.12)' }
 
   return (
-    <div className="bg-[#0e1f14] rounded-xl border border-white/5">
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="w-full text-left p-4"
-      >
-        <p className="text-xs uppercase tracking-widest text-amber-400/70 font-medium mb-3">{label}</p>
+    <div
+      className="rounded-xl"
+      style={{ background: 'rgba(10,18,40,0.8)', border: `1px solid ${CELESTE}18` }}
+    >
+      <button onClick={() => setOpen(o => !o)} className="w-full text-left p-4">
+        <p className="text-xs uppercase tracking-widest font-semibold mb-3" style={{ color: `${CELESTE}90` }}>
+          {label}
+        </p>
         <div className="flex items-start gap-3">
           <Jersey kit={squad.kit} />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap mb-1">
               <span className="text-white font-bold text-sm">{squad.country} {squad.year}</span>
-              <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${resultColor}`}>
+              <span
+                className="text-xs font-bold px-2 py-0.5 rounded-full"
+                style={{
+                  backgroundColor: resultStyle.bg,
+                  color: resultStyle.text,
+                  border: `1px solid ${resultStyle.border}`,
+                }}
+              >
                 {squad.result}
               </span>
             </div>
-            <p className="text-gray-500 text-xs">DT: {squad.coach} · {squad.competition}</p>
-            <p className="text-gray-400 text-xs mt-1.5 leading-relaxed line-clamp-2">{squad.description}</p>
+            <p className="text-xs mb-1.5" style={{ color: 'rgba(255,255,255,0.35)' }}>
+              DT: {squad.coach}
+            </p>
+            <p className="text-xs leading-relaxed line-clamp-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              {squad.description}
+            </p>
           </div>
-          <span className="text-gray-600 flex-shrink-0 text-xs mt-1">{open ? '▲' : '▼'}</span>
+          <span className="flex-shrink-0 text-xs mt-1" style={{ color: 'rgba(255,255,255,0.3)' }}>
+            {open ? '▲' : '▼'}
+          </span>
         </div>
       </button>
 
       {open && (
-        <div className="px-4 pb-4 border-t border-white/5 pt-3 animate-fade-up">
-          <p className="text-gray-400 text-xs leading-relaxed mb-3">{squad.description}</p>
+        <div
+          className="px-4 pb-4 pt-3 animate-fade-up"
+          style={{ borderTop: `1px solid ${CELESTE}15` }}
+        >
+          <p className="text-xs leading-relaxed mb-3" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            {squad.description}
+          </p>
           <div className="grid grid-cols-2 gap-1.5">
-            {squad.players.map((p, i) => (
-              <div key={i} className="flex items-center gap-1.5">
-                <span className={`text-[10px] font-bold px-1.5 py-px rounded border flex-shrink-0 ${POS_COLOR[p.pos]}`}>
-                  {p.pos}
-                </span>
-                <span className="text-gray-300 text-xs truncate">
-                  {p.name}
-                  {p.captain && <span className="text-amber-400 ml-1">(C)</span>}
-                </span>
-              </div>
-            ))}
+            {squad.players.map((p, i) => {
+              const pc = POS_COLOR[p.pos]
+              return (
+                <div key={i} className="flex items-center gap-1.5">
+                  <span
+                    className="text-[10px] font-bold px-1.5 py-px rounded flex-shrink-0"
+                    style={{ backgroundColor: pc.bg, color: pc.text, border: `1px solid ${pc.border}` }}
+                  >
+                    {p.pos}
+                  </span>
+                  <span className="text-xs truncate" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                    {p.name}
+                    {p.captain && <span style={{ color: ORO }}> (C)</span>}
+                  </span>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
@@ -118,44 +156,68 @@ function MatchPanel({ match }) {
 
   const searchUrl = q => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`
 
-  const roundColor = {
-    'Final': 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-    'Semifinal': 'bg-purple-500/15 text-purple-400 border-purple-500/30',
-    'Cuartos de Final': 'bg-blue-500/15 text-blue-400 border-blue-500/30',
-    'Octavos de Final': 'bg-teal-500/15 text-teal-400 border-teal-500/30',
-    'Fase de Grupos': 'bg-green-500/15 text-green-400 border-green-500/30',
-  }[match.round] || 'bg-white/5 text-gray-400 border-white/10'
+  const roundColors = {
+    'Final':          { bg: `${ORO}18`,              text: ORO,      border: `${ORO}35` },
+    'Semifinal':      { bg: 'rgba(192,132,252,0.12)', text: '#c084fc', border: 'rgba(192,132,252,0.35)' },
+    'Cuartos de Final': { bg: `${CELESTE}15`,         text: CELESTE,  border: `${CELESTE}35` },
+    'Octavos de Final': { bg: 'rgba(52,211,153,0.12)', text: '#34d399', border: 'rgba(52,211,153,0.3)' },
+    'Fase de Grupos':   { bg: 'rgba(134,239,172,0.1)', text: '#86efac', border: 'rgba(134,239,172,0.25)' },
+  }
+  const rc = roundColors[match.round] || { bg: 'rgba(255,255,255,0.05)', text: '#aaa', border: 'rgba(255,255,255,0.12)' }
 
   return (
-    <div className="bg-[#0e1f14] rounded-xl border border-white/5 p-4">
-      <p className="text-xs uppercase tracking-widest text-amber-400/70 font-medium mb-3">⚽ Partido Histórico ARG</p>
+    <div
+      className="rounded-xl p-4"
+      style={{ background: 'rgba(10,18,40,0.8)', border: `1px solid ${CELESTE}18` }}
+    >
+      <p className="text-xs uppercase tracking-widest font-semibold mb-3" style={{ color: `${CELESTE}90` }}>
+        ⚽ Partido Histórico ARG
+      </p>
 
-      {/* Score header */}
-      <div className="flex items-center gap-2 flex-wrap mb-1">
-        <span className="text-white font-black text-base">🇦🇷 ARG {match.score} {match.opponent}</span>
-        {match.scoreDetail && <span className="text-gray-500 text-xs">{match.scoreDetail}</span>}
+      <div className="mb-1">
+        <span className="text-white font-black text-base">
+          🇦🇷 ARG {match.score} {match.opponent}
+        </span>
+        {match.scoreDetail && (
+          <span className="text-xs ml-2" style={{ color: 'rgba(255,255,255,0.35)' }}>{match.scoreDetail}</span>
+        )}
       </div>
+
       <div className="flex items-center gap-2 flex-wrap mb-2">
-        <span className="text-amber-400 text-xs font-bold">{match.year}</span>
-        <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${roundColor}`}>{match.round}</span>
+        <span className="font-bold text-xs" style={{ color: ORO }}>{match.year}</span>
+        <span
+          className="text-xs font-bold px-2 py-0.5 rounded-full"
+          style={{ backgroundColor: rc.bg, color: rc.text, border: `1px solid ${rc.border}` }}
+        >
+          {match.round}
+        </span>
       </div>
 
-      {/* Goals */}
       {match.goals.length > 0 && (
         <div className="flex gap-1.5 flex-wrap mb-3">
           {match.goals.map((g, i) => (
-            <span key={i} className="text-[10px] bg-white/5 text-gray-400 px-1.5 py-0.5 rounded border border-white/10">
+            <span
+              key={i}
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.05)',
+                color: 'rgba(255,255,255,0.45)',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}
+            >
               ⚽ {g.player} {g.minute}'
             </span>
           ))}
         </div>
       )}
 
-      <p className="text-gray-400 text-xs leading-relaxed mb-3">{match.description}</p>
+      <p className="text-xs leading-relaxed mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>
+        {match.description}
+      </p>
 
-      {/* Video */}
+      {/* Video embed o thumbnail */}
       {playing && match.highlightsYoutubeId ? (
-        <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+        <div className="relative w-full rounded-lg overflow-hidden mb-3" style={{ paddingBottom: '56.25%' }}>
           <iframe
             className="absolute inset-0 w-full h-full"
             src={`https://www.youtube.com/embed/${match.highlightsYoutubeId}?autoplay=1&rel=0`}
@@ -166,18 +228,21 @@ function MatchPanel({ match }) {
         </div>
       ) : match.highlightsYoutubeId ? (
         <div
-          className="relative w-full rounded-lg overflow-hidden cursor-pointer group bg-black"
-          style={{ paddingBottom: '42%' }}
+          className="relative w-full rounded-lg overflow-hidden cursor-pointer group mb-3"
+          style={{ paddingBottom: '42%', backgroundColor: '#05091a' }}
           onClick={() => setPlaying(true)}
         >
           <img
-            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+            className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"
             src={`https://img.youtube.com/vi/${match.highlightsYoutubeId}/mqdefault.jpg`}
             alt=""
             onError={e => { e.target.style.display = 'none' }}
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+            <div
+              className="w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl"
+              style={{ backgroundColor: '#cc0000' }}
+            >
               <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
@@ -186,21 +251,22 @@ function MatchPanel({ match }) {
         </div>
       ) : null}
 
-      {/* Buttons */}
-      <div className="flex gap-2 mt-3 flex-wrap">
+      <div className="flex gap-2 flex-wrap">
         {match.highlightsYoutubeId ? (
           <button
             onClick={() => setPlaying(v => !v)}
-            className="flex items-center gap-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
+            className="flex items-center gap-1.5 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors"
+            style={{ backgroundColor: '#cc0000' }}
           >
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-            {playing ? 'Cerrar video' : 'Ver highlights'}
+            {playing ? 'Cerrar' : 'Highlights'}
           </button>
         ) : (
           <a
-            href={searchUrl(`Argentina vs ${match.opponent} ${match.year} highlights resumen`)}
+            href={searchUrl(`Argentina vs ${match.opponent} ${match.year} highlights`)}
             target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1.5 bg-red-600/80 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
+            className="flex items-center gap-1.5 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors"
+            style={{ backgroundColor: 'rgba(204,0,0,0.75)' }}
           >
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
             Buscar highlights
@@ -213,10 +279,12 @@ function MatchPanel({ match }) {
               : searchUrl(match.fullMatchSearch)
           }
           target="_blank" rel="noopener noreferrer"
-          className="flex items-center gap-1.5 border border-white/15 hover:border-white/30 text-gray-400 hover:text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
+          className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-colors"
+          style={{ border: `1px solid ${CELESTE}30`, color: `${CELESTE}CC` }}
         >
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
           Partido completo
         </a>
@@ -232,12 +300,23 @@ function DayCard({ content, unlocked, isToday }) {
 
   if (!unlocked) {
     return (
-      <div className="border border-white/5 rounded-2xl p-4 opacity-40 select-none">
+      <div
+        className="rounded-2xl p-4 select-none"
+        style={{
+          border: `1px solid rgba(255,255,255,0.04)`,
+          backgroundColor: 'rgba(10,15,35,0.4)',
+          opacity: 0.4,
+        }}
+      >
         <div className="flex items-center gap-3">
-          <span className="text-gray-700 text-xl">🔒</span>
+          <span className="text-xl" style={{ color: 'rgba(255,255,255,0.2)' }}>🔒</span>
           <div>
-            <p className="text-gray-700 font-semibold text-sm">Día {day + 1} — {milestone.date}</p>
-            <p className="text-gray-800 text-xs">Se desbloquea el {milestone.date}</p>
+            <p className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.2)' }}>
+              Día {day + 1} — {milestone.date}
+            </p>
+            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.12)' }}>
+              Se desbloquea el {milestone.date}
+            </p>
           </div>
         </div>
       </div>
@@ -245,36 +324,61 @@ function DayCard({ content, unlocked, isToday }) {
   }
 
   return (
-    <div className={`rounded-2xl border transition-colors ${
-      isToday
-        ? 'border-amber-500/40 bg-[#132218] shadow-lg shadow-amber-900/20'
-        : 'border-white/10 bg-[#0f1d13] hover:border-white/20'
-    }`}>
+    <div
+      className="rounded-2xl transition-colors"
+      style={{
+        border: `1px solid ${isToday ? `${CELESTE}50` : `${CELESTE}18`}`,
+        backgroundColor: isToday ? 'rgba(12,24,55,0.95)' : 'rgba(8,14,32,0.85)',
+        boxShadow: isToday ? `0 0 30px rgba(116,172,223,0.08)` : 'none',
+      }}
+    >
+      {/* Header del día */}
       <button
         onClick={() => setOpen(o => !o)}
         className="w-full text-left px-5 py-4 flex items-center justify-between gap-4"
       >
         <div className="flex items-center gap-3 min-w-0">
-          <span className="text-amber-400 font-black text-lg flex-shrink-0 tabular-nums">
+          {/* Número del día */}
+          <span
+            className="font-black text-xl flex-shrink-0 tabular-nums w-8 text-right"
+            style={{ color: ORO }}
+          >
             {String(day + 1).padStart(2, '0')}
           </span>
-          <div>
+
+          <div className="min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-white font-bold text-sm">{milestone.date}</span>
               {isToday && (
-                <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/30 animate-pulse font-medium">
+                <span
+                  className="text-xs font-bold px-2 py-0.5 rounded-full animate-pulse"
+                  style={{
+                    backgroundColor: `${CELESTE}20`,
+                    color: CELESTE,
+                    border: `1px solid ${CELESTE}45`,
+                  }}
+                >
                   HOY
                 </span>
               )}
             </div>
-            <p className="text-gray-500 text-xs truncate">{milestone.title} · {milestone.year}</p>
+            <p className="text-xs truncate" style={{ color: 'rgba(255,255,255,0.3)' }}>
+              {milestone.title} · {milestone.year}
+            </p>
           </div>
         </div>
-        <span className="text-gray-500 text-sm flex-shrink-0">{open ? '▲' : '▼'}</span>
+
+        <span className="text-sm flex-shrink-0" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          {open ? '▲' : '▼'}
+        </span>
       </button>
 
+      {/* Contenido expandido */}
       {open && (
-        <div className="px-4 pb-5 border-t border-white/5 pt-4 grid gap-3 md:grid-cols-2 animate-fade-up">
+        <div
+          className="px-4 pb-5 pt-4 grid gap-3 md:grid-cols-2 animate-fade-up"
+          style={{ borderTop: `1px solid ${CELESTE}18` }}
+        >
           <MilestonePanel milestone={content.milestone} />
           <MatchPanel match={content.match} />
           <SquadPanel squad={content.argentineSquad} isArgentine={true} />
@@ -292,10 +396,15 @@ export default function DailyView() {
   return (
     <section id="dias" className="py-16 px-4 max-w-5xl mx-auto">
       <div className="text-center mb-10">
-        <span className="text-xs uppercase tracking-widest text-amber-400/80 font-medium">Día a día</span>
+        <span
+          className="text-xs uppercase tracking-widest font-bold"
+          style={{ color: `${CELESTE}80` }}
+        >
+          Día a día
+        </span>
         <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Camino al Mundial</h2>
-        <p className="text-gray-400 mt-2 text-sm">
-          {unlockedCount} de {dailyContent.length} días desbloqueados — cada día: un hito, un plantel argentino, un plantel histórico y un partido
+        <p className="mt-2 text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>
+          {unlockedCount} de {dailyContent.length} días desbloqueados — cada día: un hito, dos planteles y un partido
         </p>
       </div>
 
