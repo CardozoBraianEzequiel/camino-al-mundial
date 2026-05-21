@@ -13,7 +13,7 @@ function getTimeLeft() {
   }
 }
 
-function TimeBlock({ value, label }) {
+function TimeBlock({ value, label, labelMobile }) {
   return (
     <div className="flex flex-col items-center">
       <div
@@ -29,9 +29,16 @@ function TimeBlock({ value, label }) {
         </span>
       </div>
       <span className="mt-2 text-xs uppercase tracking-widest font-semibold" style={{ color: '#74ACDF' }}>
-        {label}
+        <span className="md:hidden">{labelMobile}</span>
+        <span className="hidden md:inline">{label}</span>
       </span>
     </div>
+  )
+}
+
+function Separator() {
+  return (
+    <span className="text-4xl md:text-6xl font-black pb-6 leading-none" style={{ color: 'rgba(116,172,223,0.5)' }}>:</span>
   )
 }
 
@@ -53,15 +60,25 @@ export default function Countdown() {
 
   return (
     <div className="flex flex-col items-center gap-5">
-      <div className="flex gap-3 md:gap-5 items-end">
-        <TimeBlock value={timeLeft.days}    label="Días" />
-        <span className="text-4xl md:text-6xl font-black pb-6 leading-none" style={{ color: 'rgba(116,172,223,0.5)' }}>:</span>
-        <TimeBlock value={timeLeft.hours}   label="Horas" />
-        <span className="text-4xl md:text-6xl font-black pb-6 leading-none" style={{ color: 'rgba(116,172,223,0.5)' }}>:</span>
-        <TimeBlock value={timeLeft.minutes} label="Minutos" />
-        <span className="text-4xl md:text-6xl font-black pb-6 leading-none" style={{ color: 'rgba(116,172,223,0.5)' }}>:</span>
-        <TimeBlock value={timeLeft.seconds} label="Segundos" />
+      {/* Mobile: 2x2 grid */}
+      <div className="grid grid-cols-2 gap-3 md:hidden">
+        <TimeBlock value={timeLeft.days}    label="Días"     labelMobile="Días" />
+        <TimeBlock value={timeLeft.hours}   label="Horas"    labelMobile="Hs" />
+        <TimeBlock value={timeLeft.minutes} label="Minutos"  labelMobile="Min" />
+        <TimeBlock value={timeLeft.seconds} label="Segundos" labelMobile="Seg" />
       </div>
+
+      {/* Desktop: single row with separators */}
+      <div className="hidden md:flex gap-5 items-end">
+        <TimeBlock value={timeLeft.days}    label="Días"     labelMobile="Días" />
+        <Separator />
+        <TimeBlock value={timeLeft.hours}   label="Horas"    labelMobile="Hs" />
+        <Separator />
+        <TimeBlock value={timeLeft.minutes} label="Minutos"  labelMobile="Min" />
+        <Separator />
+        <TimeBlock value={timeLeft.seconds} label="Segundos" labelMobile="Seg" />
+      </div>
+
       <p className="text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
         hasta el primer partido — 11 de junio de 2026
       </p>
