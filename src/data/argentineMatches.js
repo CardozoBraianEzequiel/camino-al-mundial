@@ -1,26 +1,25 @@
 // 21 partidos históricos de Argentina en Mundiales
-// highlightsYoutubeId: ID del video de YouTube (null = usar búsqueda)
-// fullMatchYoutubeId: ID del partido completo en YouTube (null = usar búsqueda)
+// Orden: 2014 Final primero, luego alternando reciente / clásico
+// highlightsYoutubeId: ID de YouTube (null = búsqueda automática)
 export const argentineMatches = [
+  // ── DÍA 0 ── Puerta de entrada: la más dolorosa antes de Qatar ────────────
   {
     id: 1,
-    year: 1930,
-    round: 'Semifinal',
-    opponent: 'EE.UU.',
-    score: '6 - 1',
-    stadium: 'Estadio Centenario, Montevideo',
-    goals: [
-      { player: 'Monti', minute: 20 },
-      { player: 'Scopelli', minute: 56 },
-      { player: 'Stábile (3)', minute: 60 },
-      { player: 'Peucelle (2)', minute: 80 },
-    ],
+    year: 2014,
+    round: 'Final',
+    opponent: 'Alemania',
+    score: '0 - 1',
+    scoreDetail: '(AET)',
+    stadium: 'Estadio Maracaná, Río de Janeiro',
+    goals: [],
     description:
-      'El primer paso de Argentina hacia la final de su primer Mundial. Guillermo Stábile, el goleador del torneo (8 goles), marcó un hat-trick. Argentina demostraba que era el gran candidato junto con Uruguay. La final ante los charrúas al día siguiente marcaría el comienzo de la gran rivalidad.',
+      'La final más dolorosa antes de Qatar. Higuaín falló dos manos a mano en el primer tiempo. En el minuto 113 del alargue, Schürrle centró y Götze la controló en el pecho y la volteó ante Romero. Messi ganó el Balón de Oro pero no pudo levantar la Copa. Ese dolor sembró la semilla de lo que vendría en 2022.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs USA 1930 World Cup semifinal',
+    fullMatchSearch: 'Argentina vs Germany 2014 World Cup Final full match',
   },
+
+  // ── DÍA 1 ── Clásico: primera Copa del Mundo ─────────────────────────────
   {
     id: 2,
     year: 1978,
@@ -35,66 +34,36 @@ export const argentineMatches = [
       { player: 'Bertoni', minute: 114 },
     ],
     description:
-      'La primera Copa del Mundo argentina. Kempes fue imparable. Tras un 1-1 al final del tiempo reglamentario, Mario Kempes marcó el 2-1 en el alargue con una gambeta feroz y Bertoni cerró el marcador. El papel picado azul y blanco cayendo desde las tribunas del Monumental fue una imagen que nunca se olvidó.',
+      'La primera Copa del Mundo argentina, ganada en casa ante 71.000 personas. Kempes fue imparable: marcó el 1-0 en el primer tiempo, luego el 2-1 en el alargue tras una gambeta en el área. Bertoni cerró el marcador. El papel picado azul y blanco cayendo desde las tribunas del Monumental quedó grabado en la historia.',
     highlightsYoutubeId: 'AE0iHiP5j7U',
     fullMatchYoutubeId: null,
     fullMatchSearch: 'Argentina vs Netherlands 1978 World Cup Final full match',
   },
+
+  // ── DÍA 2 ── Reciente: la mejor final de todos los tiempos ───────────────
   {
     id: 3,
-    year: 1982,
-    round: 'Fase de Grupos',
-    opponent: 'Hungría',
-    score: '4 - 1',
-    stadium: 'Estadio José Rico Pérez, Alicante',
+    year: 2022,
+    round: 'Final',
+    opponent: 'Francia',
+    score: '3 - 3',
+    scoreDetail: '(AET — 4-2 en penales)',
+    stadium: 'Estadio Lusail, Qatar',
     goals: [
-      { player: 'Bertoni', minute: 27 },
-      { player: 'Maradona', minute: 29 },
-      { player: 'Maradona', minute: 57 },
-      { player: 'Ardiles', minute: 60 },
+      { player: 'Messi (pen.)', minute: 23 },
+      { player: 'Di María', minute: 36 },
+      { player: 'Messi', minute: 108 },
     ],
     description:
-      'El primer gran partido de Maradona en un Mundial. Marcó dos goles con 21 años. La expectativa era máxima: el mejor jugador del mundo iba a llevar a Argentina a un nuevo título. Pero la historia del 82 sería mucho más complicada, y terminaría con la expulsión de Maradona ante Brasil.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Hungary 1982 World Cup Maradona highlights',
+      'El mejor partido de la historia del fútbol. Argentina dominaba 2-0 cuando Mbappé marcó dos goles en 97 segundos. En el alargue, Messi volvió a marcar para el 3-2, pero Mbappé completó su hat-trick con un penal. En la definición, el Dibu atajó a Coman y Tchouaméni. Messi levantó la Copa del Mundo.',
+    highlightsYoutubeId: 'R0HHKMVKJHA',
+    fullMatchYoutubeId: 'R0HHKMVKJHA',
+    fullMatchSearch: 'Argentina vs France 2022 World Cup Final full match',
   },
+
+  // ── DÍA 3 ── Clásico: el partido más icónico de la historia ──────────────
   {
     id: 4,
-    year: 1986,
-    round: 'Fase de Grupos',
-    opponent: 'Corea del Sur',
-    score: '3 - 1',
-    stadium: 'Estadio Olímpico Universitario, Ciudad de México',
-    goals: [
-      { player: 'Valdano', minute: 6 },
-      { player: 'Maradona', minute: 18 },
-      { player: 'Maradona', minute: 62 },
-    ],
-    description:
-      'El debut del equipo campeón del 86. Maradona ya lucía en otro nivel. Jorge Valdano anotó el primero pero Diego tomó el control total del juego. En el segundo gol, una gambeta de pizarrón. El mundo comenzaba a ver que este Mundial le pertenecía.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs South Korea 1986 World Cup group match',
-  },
-  {
-    id: 5,
-    year: 1986,
-    round: 'Octavos de Final',
-    opponent: 'Uruguay',
-    score: '1 - 0',
-    stadium: 'Estadio Olímpico Universitario, Ciudad de México',
-    goals: [
-      { player: 'Pasculli', minute: 41 },
-    ],
-    description:
-      'El clásico rioplatense en el Mundial. Fue un partido duro, feo, con muchas fricciones. Pedro Pasculli marcó el único gol con un remate de derecha. Maradona jugó bien pero Batista (Uruguay) fue expulsado temprano. La "batalla" era esperada y Argentina superó el escollo.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Uruguay 1986 World Cup round of 16',
-  },
-  {
-    id: 6,
     year: 1986,
     round: 'Cuartos de Final',
     opponent: 'Inglaterra',
@@ -105,30 +74,34 @@ export const argentineMatches = [
       { player: 'Maradona', minute: 55 },
     ],
     description:
-      'El partido más icónico de la historia del fútbol. En el minuto 51, "La Mano de Dios": Maradona tocó con la mano izquierda y el árbitro no la vio. Cuatro minutos después llegó el "Gol del Siglo": partió desde el mediocampo, gambeteó a cinco ingleses y le sacó el mote de mejor gol de la historia. Lineker descontó pero fue tarde.',
+      'El partido más icónico de la historia del fútbol. En el minuto 51, "La Mano de Dios": Maradona tocó con la mano izquierda sin que el árbitro la viera. Cuatro minutos después marcó el "Gol del Siglo": partió desde el mediocampo y gambeteó a cinco jugadores ingleses. Lineker descontó pero fue tarde.',
     highlightsYoutubeId: 'PBMsER3dHRg',
     fullMatchYoutubeId: null,
     fullMatchSearch: 'Argentina vs England 1986 World Cup quarter final full match',
   },
+
+  // ── DÍA 4 ── Reciente: el gol de Rojo que nos salvó ─────────────────────
   {
-    id: 7,
-    year: 1986,
-    round: 'Semifinal',
-    opponent: 'Bélgica',
-    score: '2 - 0',
-    stadium: 'Estadio Azteca, Ciudad de México',
+    id: 5,
+    year: 2018,
+    round: 'Fase de Grupos',
+    opponent: 'Nigeria',
+    score: '2 - 1',
+    stadium: 'Estadio Krestovski, San Petersburgo',
     goals: [
-      { player: 'Maradona', minute: 51 },
-      { player: 'Maradona', minute: 63 },
+      { player: 'Messi', minute: 14 },
+      { player: 'Rojo', minute: 86 },
     ],
     description:
-      'Maradona marcó dos goles más de pura magia. El primero, gambeteando a tres belgas en el área chica. El segundo, otro regate largo en solitario. En este Mundial, Diego marcó 5 goles en total y dio 5 asistencias. Era extraterrestre.',
+      'Después del 0-3 ante Croacia, Argentina necesitaba ganar o quedaba eliminada. Messi controló de pecho, acomodó y clavó de zurda para el 1-0. Nigeria empató de penal. En el 86, Mercado centró, Rojo llegó desde atrás y voló la pelota al fondo de la red. El festejo de Messi fue el más desatado de su carrera.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Belgium 1986 World Cup semifinal Maradona',
+    fullMatchSearch: 'Argentina vs Nigeria 2018 World Cup Rojo goal full match',
   },
+
+  // ── DÍA 5 ── Clásico: la segunda Copa del Mundo ──────────────────────────
   {
-    id: 8,
+    id: 6,
     year: 1986,
     round: 'Final',
     opponent: 'Alemania Occidental',
@@ -140,13 +113,35 @@ export const argentineMatches = [
       { player: 'Burruchaga', minute: 83 },
     ],
     description:
-      'Argentina ganó su segunda Copa del Mundo con un gol de Burruchaga a 7 minutos del final. Los alemanes habían empatado 2-2 a los 80 minutos. Entonces Maradona filtró un pase preciso y Burruchaga salió mano a mano con Schumacher para clavar el 3-2. Maradona, con 25 años, levantó la Copa en México.',
+      'Argentina ganó su segunda Copa del Mundo con un gol de Burruchaga a 7 minutos del final. Los alemanes habían empatado 2-2 a los 80 minutos. Maradona filtró el pase definitivo y Burruchaga, mano a mano con Schumacher, la clavó al fondo. Diego, a los 25 años, levantó la Copa en el Azteca.',
     highlightsYoutubeId: 'GZ8DxHEe8sA',
     fullMatchYoutubeId: null,
     fullMatchSearch: 'Argentina vs West Germany 1986 World Cup final full match',
   },
+
+  // ── DÍA 6 ── Reciente: la noche de Messi y Álvarez en Qatar ──────────────
   {
-    id: 9,
+    id: 7,
+    year: 2022,
+    round: 'Semifinal',
+    opponent: 'Croacia',
+    score: '3 - 0',
+    stadium: 'Estadio Lusail, Qatar',
+    goals: [
+      { player: 'Messi (pen.)', minute: 34 },
+      { player: 'Álvarez', minute: 39 },
+      { player: 'Álvarez', minute: 69 },
+    ],
+    description:
+      'La noche en que Messi superó el récord de asistencias mundialistas de Maradona. Julián Álvarez recorrió 60 metros gambeteando a tres croatas para el segundo gol. Livakovic fue el mejor arquero de Qatar hasta ese partido; Argentina lo dejó en papeles.',
+    highlightsYoutubeId: 'v67S0oYkJJw',
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs Croatia 2022 World Cup semifinal full match',
+  },
+
+  // ── DÍA 7 ── Clásico: el gol de Caniggia que tumbó a Brasil ──────────────
+  {
+    id: 8,
     year: 1990,
     round: 'Octavos de Final',
     opponent: 'Brasil',
@@ -156,30 +151,35 @@ export const argentineMatches = [
       { player: 'Caniggia', minute: 81 },
     ],
     description:
-      'Uno de los goles más famosos de la historia argentina. Brasil dominaba todo el partido con Maradona prácticamente fuera de forma. Pero Diego inventó una gambeta imposible y filtró el pase para Claudio Caniggia, quien cabeceó solo al gol. El festejo de Maradona, llorando, es una imagen eterna.',
+      'Brasil dominaba el partido con Maradona prácticamente fuera de forma. Pero Diego inventó una gambeta genial y filtró el pase para Caniggia, que cabeceó solo al gol. El festejo de Maradona, llorando de rodillas, es una imagen eterna del fútbol argentino.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Brazil 1990 World Cup Caniggia goal full match',
+    fullMatchSearch: 'Argentina vs Brazil 1990 World Cup round of 16 Caniggia goal',
   },
+
+  // ── DÍA 8 ── Reciente: el Dibu, el show, el épico 4-3 ────────────────────
   {
-    id: 10,
-    year: 1990,
-    round: 'Semifinal',
-    opponent: 'Italia',
-    score: '1 - 1',
+    id: 9,
+    year: 2022,
+    round: 'Cuartos de Final',
+    opponent: 'Países Bajos',
+    score: '2 - 2',
     scoreDetail: '(AET — 4-3 en penales)',
-    stadium: 'Estadio San Paolo, Nápoles',
+    stadium: 'Estadio Lusail, Qatar',
     goals: [
-      { player: 'Caniggia', minute: 67 },
+      { player: 'Molina', minute: 35 },
+      { player: 'Messi (pen.)', minute: 73 },
     ],
     description:
-      'La noche más emotiva de Italia 90. Argentina jugó en Nápoles, ciudad donde Maradona era ídolo, ante Italia. Diego pidió al pueblo napolitano que apoyara a Argentina. Goycochea salvó en los penales a Donadoni y Serena. Argentina pasó a la final entre silbidos.',
+      'Argentina ganaba 2-0 a 10 minutos del final cuando Weghorst marcó dos goles y llevó el partido a penales. El Dibu Martínez fue el héroe: atajos dos disparos y su show psicológico fue memorable. Messi desafió a Van Gaal en cámara: "¿Qué mirás, bobo?".',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Italy 1990 World Cup semifinal Naples full match',
+    fullMatchSearch: 'Argentina vs Netherlands 2022 World Cup quarterfinal Dibu Martinez',
   },
+
+  // ── DÍA 9 ── Clásico 94: la cara de Maradona ─────────────────────────────
   {
-    id: 11,
+    id: 10,
     year: 1994,
     round: 'Fase de Grupos',
     opponent: 'Grecia',
@@ -192,13 +192,72 @@ export const argentineMatches = [
       { player: 'Batistuta', minute: 90 },
     ],
     description:
-      'El partido de la "cara de Maradona". En el minuto 60, Diego recibió de Caniggia, la acomodó y la clavó de zurda. Corrió hacia la cámara con los ojos desorbitados, la lengua afuera y el grito desgarrador. Una imagen que quedó grabada como una de las más icónicas del fútbol. Era su último gran momento en un Mundial.',
+      'En el minuto 60, Maradona recibió de Caniggia, la acomodó y la clavó de zurda. Corrió hacia la cámara con los ojos desorbitados y el grito desgarrador. Una imagen que quedó grabada como una de las más icónicas del fútbol. Sería uno de sus últimos grandes momentos en un Mundial.',
     highlightsYoutubeId: 'szsMJERIjOs',
     fullMatchYoutubeId: null,
     fullMatchSearch: 'Argentina vs Greece 1994 World Cup Maradona goal full match',
   },
+
+  // ── DÍA 10 ── Reciente: Messi en el Maracaná chico ───────────────────────
+  {
+    id: 11,
+    year: 2022,
+    round: 'Octavos de Final',
+    opponent: 'Australia',
+    score: '2 - 1',
+    stadium: 'Estadio Ahmad bin Ali, Al Rayyan',
+    goals: [
+      { player: 'Messi', minute: 35 },
+      { player: 'Álvarez', minute: 57 },
+    ],
+    description:
+      'El primer gol de Messi en eliminatorias directas de un Mundial. Gambeteó entre tres australianos con un movimiento súbito y la metió abajo del palo. En el segundo tiempo, la gambeta entre tres australianos más fue considerada una de las mejores del torneo. Argentina sufrió al final con un gol de Mack Neil, pero clasificó.',
+    highlightsYoutubeId: null,
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs Australia 2022 World Cup round of 16 Messi goal',
+  },
+
+  // ── DÍA 11 ── Clásico 90: la noche de Nápoles ────────────────────────────
   {
     id: 12,
+    year: 1990,
+    round: 'Semifinal',
+    opponent: 'Italia',
+    score: '1 - 1',
+    scoreDetail: '(AET — 4-3 en penales)',
+    stadium: 'Estadio San Paolo, Nápoles',
+    goals: [
+      { player: 'Caniggia', minute: 67 },
+    ],
+    description:
+      'La noche más emotiva de Italia 90. Argentina jugó en Nápoles, la ciudad donde Maradona era un dios. Diego pidió al pueblo napolitano que apoyara a Argentina. Goycochea atajos dos penales (Donadoni y Serena) y Argentina pasó a la final entre silbidos del resto de Italia.',
+    highlightsYoutubeId: null,
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs Italy 1990 World Cup semifinal Naples penalty shootout',
+  },
+
+  // ── DÍA 12 ── Reciente 2014: el gol de Di María en el 118 ────────────────
+  {
+    id: 13,
+    year: 2014,
+    round: 'Octavos de Final',
+    opponent: 'Suiza',
+    score: '1 - 0',
+    scoreDetail: '(AET)',
+    stadium: 'Arena Corinthians, São Paulo',
+    goals: [
+      { player: 'Di María', minute: 118 },
+    ],
+    description:
+      'Argentina sufrió ante Suiza durante 118 minutos. Entonces Di María cortó hacia adentro, recibió el pase de Messi y remató cruzado al fondo de la red. Sin ese gol, Argentina no habría llegado a la final de Brasil. El "Fideo" lo hizo cuando más se necesitaba.',
+    highlightsYoutubeId: null,
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs Switzerland 2014 World Cup Di Maria extra time goal',
+  },
+
+  // ── DÍA 13 ── Clásico 98: Owen, Beckham y los penales ────────────────────
+  {
+    id: 14,
     year: 1998,
     round: 'Octavos de Final',
     opponent: 'Inglaterra',
@@ -206,17 +265,56 @@ export const argentineMatches = [
     scoreDetail: '(AET — 3-4 en penales)',
     stadium: 'Stade Geoffroy-Guichard, Saint-Étienne',
     goals: [
-      { player: 'Zanetti', minute: 45 },
       { player: 'Batistuta (pen.)', minute: 6 },
+      { player: 'Zanetti', minute: 45 },
     ],
     description:
-      'Uno de los mejores partidos de la historia. Owen marcó uno de los mejores goles individuales de todos los tiempos a los 16 años. Zanetti convirtió en el límite del primer tiempo con una jugada ensayada de córner. Beckham fue expulsado. En los penales, Roa atajó a Ince y Batty pero Argentina cayó igual.',
+      'Uno de los mejores partidos de la historia mundialista. Owen marcó uno de los mejores goles individuales de todos los tiempos a los 18 años. Zanetti anotó de córner corto en el límite del primer tiempo. Beckham fue expulsado. Roa atajó dos penales pero Argentina cayó igual.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs England 1998 World Cup round of 16 Owen Beckham',
+    fullMatchSearch: 'Argentina vs England 1998 World Cup round of 16 Owen Beckham full match',
   },
+
+  // ── DÍA 14 ── Reciente 2014: el partido de Romero ────────────────────────
   {
-    id: 13,
+    id: 15,
+    year: 2014,
+    round: 'Semifinal',
+    opponent: 'Países Bajos',
+    score: '0 - 0',
+    scoreDetail: '(AET — 4-2 en penales)',
+    stadium: 'Arena de São Paulo, São Paulo',
+    goals: [],
+    description:
+      'El partido de Sergio Romero. Sin marcar ningún gol en 120 minutos, Argentina pasó gracias a las atajadas del arquero en los penales (a Robben y Sneijder). Mascherano fue un monstruo defensivo. Messi pasó apagado pero llegaron a la final. "¡El que no salta es un inglés!"',
+    highlightsYoutubeId: null,
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs Netherlands 2014 World Cup semifinal penalty shootout',
+  },
+
+  // ── DÍA 15 ── Reciente 2018: el partido que presentó a Mbappé ────────────
+  {
+    id: 16,
+    year: 2018,
+    round: 'Octavos de Final',
+    opponent: 'Francia',
+    score: '3 - 4',
+    stadium: 'Estadio Kazán Arena, Kazán',
+    goals: [
+      { player: 'Di María', minute: 41 },
+      { player: 'Mercado', minute: 48 },
+      { player: 'Agüero', minute: 93 },
+    ],
+    description:
+      'El partido que le presentó Mbappé al mundo. Pavard anotó un golazo de volea para empatar. Luego Mbappé fue imparable: dos goles en 4 minutos. Argentina descontó con un Agüero en el 93 para el 3-4 final. Era el fin del camino para Messi en Rusia. Cuatro años después llegaría la revancha.',
+    highlightsYoutubeId: null,
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs France 2018 World Cup round of 16 Mbappe full match',
+  },
+
+  // ── DÍA 16 ── Clásico 2006: el mejor gol colectivo de un Mundial ──────────
+  {
+    id: 17,
     year: 2006,
     round: 'Fase de Grupos',
     opponent: 'Serbia y Montenegro',
@@ -231,32 +329,33 @@ export const argentineMatches = [
       { player: 'Saviola', minute: 90 },
     ],
     description:
-      'Una de las actuaciones más brillantes de Argentina en un Mundial. El gol colectivo del 2-0, con 24 toques consecutivos, fue elegido el gol del torneo. Messi ingresó como suplente y marcó de media vuelta con su primer toque. El joven Leo, de 18 años, demostraba que el mundo le quedaría chico.',
+      'Una de las actuaciones más brillantes de Argentina en un Mundial. El gol colectivo del 2-0, con 24 toques consecutivos, fue elegido el mejor gol del torneo. Messi ingresó como suplente y anotó a los 18 años con su primer toque. El mundo comenzaba a entender que Messi era diferente.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
     fullMatchSearch: 'Argentina vs Serbia Montenegro 2006 World Cup 6-0 highlights',
   },
+
+  // ── DÍA 17 ── Reciente 2014: Higuaín define en cuartos ───────────────────
   {
-    id: 14,
-    year: 2010,
-    round: 'Fase de Grupos',
-    opponent: 'Corea del Sur',
-    score: '4 - 1',
-    stadium: 'Soccer City, Johannesburgo',
+    id: 18,
+    year: 2014,
+    round: 'Cuartos de Final',
+    opponent: 'Bélgica',
+    score: '1 - 0',
+    stadium: 'Estadio Nacional Mané Garrincha, Brasilia',
     goals: [
-      { player: 'Park (en propia)', minute: 17 },
-      { player: 'Higuaín', minute: 33 },
-      { player: 'Higuaín', minute: 76 },
-      { player: 'Higuaín', minute: 80 },
+      { player: 'Higuaín', minute: 8 },
     ],
     description:
-      'Con Maradona en el banco, Argentina aplastó a Corea. Higuaín marcó un hat-trick. Messi no marcó pero fue el mejor en cancha, generando todo. La selección parecía invencible. Nadie imaginaba que pocos partidos después llegaría el desastre alemán (0-4) en cuartos.',
+      'Messi centró desde la derecha, el arquero rechazó y Higuaín la clavó a los 8 minutos. Argentina aguantó el 1-0 durante 82 minutos más. Messi golpeó el palo en el segundo tiempo con un mano a mano. Romero fue clave bajo los tres palos. Los cuartos de Messi que sí se ganaron.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs South Korea 2010 World Cup group Higuain hat trick',
+    fullMatchSearch: 'Argentina vs Belgium 2014 World Cup quarterfinal Higuain goal',
   },
+
+  // ── DÍA 18 ── Reciente 2010: el offside de Tévez ─────────────────────────
   {
-    id: 15,
+    id: 19,
     year: 2010,
     round: 'Octavos de Final',
     opponent: 'México',
@@ -268,113 +367,47 @@ export const argentineMatches = [
       { player: 'Tévez', minute: 52 },
     ],
     description:
-      'El partido del gol "fantásma" de Tévez: marcó en fuera de juego y el linesman no lo vio. México protestó pero el gol fue válido. El partido también tuvo uno de los mejores goles de la historia: el de Tévez de volea desde fuera del área para el 1-0, con Ochoa batido a media altura.',
+      'El partido del "gol fantasma" de Tévez: marcó claramente en offside pero el linesman no lo vio y el gol fue válido. México protestó durante todo el partido. El primer gol de Tévez, una volea desde fuera del área que entró al ángulo, fue de antología. Con Maradona en el banco, Argentina era imparable... hasta Alemania.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Mexico 2010 World Cup round 16 Tevez offside',
+    fullMatchSearch: 'Argentina vs Mexico 2010 World Cup round of 16 Tevez offside goal',
   },
-  {
-    id: 16,
-    year: 2014,
-    round: 'Octavos de Final',
-    opponent: 'Suiza',
-    score: '1 - 0',
-    scoreDetail: '(AET)',
-    stadium: 'Arena Corinthians, São Paulo',
-    goals: [
-      { player: 'Di María', minute: 118 },
-    ],
-    description:
-      'Argentina sufrió ante Suiza pero Di María apareció en el minuto 118 para marcar el gol de la clasificación. El corte de Di María al interior, el control y el remate cruzado fue una obra de arte. Messi dio la asistencia. Sin ese gol, Argentina no habría llegado a la final.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Switzerland 2014 World Cup Di Maria goal extra time',
-  },
-  {
-    id: 17,
-    year: 2014,
-    round: 'Semifinal',
-    opponent: 'Países Bajos',
-    score: '0 - 0',
-    scoreDetail: '(AET — 4-2 en penales)',
-    stadium: 'Arena de São Paulo, São Paulo',
-    goals: [],
-    description:
-      'El partido de Sergio Romero. Sin marcar ningún gol en 120 minutos, Argentina pasó gracias a las atajadas de Romero en los penales (a Robben y Sneijder). Messi estaba apagado pero Mascherano fue un monstruo defensivo. La semifinal más tensa del torneo.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Netherlands 2014 World Cup semifinal penalty shootout',
-  },
-  {
-    id: 18,
-    year: 2022,
-    round: 'Cuartos de Final',
-    opponent: 'Países Bajos',
-    score: '2 - 2',
-    scoreDetail: '(AET — 4-3 en penales)',
-    stadium: 'Estadio Lusail, Qatar',
-    goals: [
-      { player: 'Molina', minute: 35 },
-      { player: 'Messi (pen.)', minute: 73 },
-    ],
-    description:
-      'El cuarto más épico de la historia de los Mundiales. Argentina ganaba 2-0 a 10 minutos del final cuando Wout Weghorst marcó dos goles y llevó el partido a penales. El Dibu Martínez fue el héroe: atajó dos penales y su show psicológico ante los holandeses fue memorable. Van Dijk y Berghuis los erraron.',
-    highlightsYoutubeId: null,
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Netherlands 2022 World Cup quarterfinal Dibu Martinez',
-  },
-  {
-    id: 19,
-    year: 2022,
-    round: 'Semifinal',
-    opponent: 'Croacia',
-    score: '3 - 0',
-    stadium: 'Estadio Lusail, Qatar',
-    goals: [
-      { player: 'Messi (pen.)', minute: 34 },
-      { player: 'Álvarez', minute: 39 },
-      { player: 'Álvarez', minute: 69 },
-    ],
-    description:
-      'La noche en que Messi rompió el récord de asistencias mundialistas de Maradona. El golazo de Álvarez — que recorrió casi 60 metros gambeteando a tres croatas — fue el mejor individual del torneo. Messi dio dos asistencias y metió el penal. Argentina era imparable en Qatar.',
-    highlightsYoutubeId: 'v67S0oYkJJw',
-    fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Croatia 2022 World Cup semifinal full match',
-  },
+
+  // ── DÍA 19 ── Clásico 94: el doblete de Caniggia ─────────────────────────
   {
     id: 20,
-    year: 2022,
-    round: 'Octavos de Final',
-    opponent: 'Australia',
+    year: 1994,
+    round: 'Fase de Grupos',
+    opponent: 'Nigeria',
     score: '2 - 1',
-    stadium: 'Estadio Ahmad bin Ali, Al Rayyan',
+    stadium: 'Foxboro Stadium, Boston',
     goals: [
-      { player: 'Messi', minute: 35 },
-      { player: 'Álvarez', minute: 57 },
+      { player: 'Batistuta (pen.)', minute: 30 },
+      { player: 'Caniggia', minute: 89 },
     ],
     description:
-      'El partido del primer gol en eliminatorias directas de Messi en un Mundial. El crack gambeteó a Mathew Ryan con un movimiento súbito y clavó abajo. En el segundo tiempo, la gambeta de Messi entre tres australianos fue considerada una de las mejores del torneo. Argentina sufrió al final pero clasificó.',
+      'Nigeria lideraba 1-0 y Argentina sufría. Batistuta empató de penal. En el minuto 89, Maradona filtró un pase y Caniggia cabeceó al gol para el 2-1. El mismo Maradona que días después sería suspendido por doping positivo, dejando huérfano al equipo. Una de sus últimas asistencias mundialistas.',
     highlightsYoutubeId: null,
     fullMatchYoutubeId: null,
-    fullMatchSearch: 'Argentina vs Australia 2022 World Cup round of 16 Messi goal',
+    fullMatchSearch: 'Argentina vs Nigeria 1994 World Cup group match Caniggia',
   },
+
+  // ── DÍA 20 ── Reciente 2022: el renacer tras Arabia ──────────────────────
   {
     id: 21,
     year: 2022,
-    round: 'Final',
-    opponent: 'Francia',
-    score: '3 - 3',
-    scoreDetail: '(AET — 4-2 en penales)',
+    round: 'Fase de Grupos',
+    opponent: 'México',
+    score: '2 - 0',
     stadium: 'Estadio Lusail, Qatar',
     goals: [
-      { player: 'Messi (pen.)', minute: 23 },
-      { player: 'Di María', minute: 36 },
-      { player: 'Messi', minute: 108 },
+      { player: 'Messi', minute: 64 },
+      { player: 'Enzo Fernández', minute: 87 },
     ],
     description:
-      'El mejor partido de la historia del fútbol. Argentina dominaba 2-0 cuando Mbappé marcó dos goles en 97 segundos y llevó el partido al alargue. Messi volvió a marcar para el 3-2 pero Mbappé completó su hat-trick con un penal. En los penales, el Dibu atajó a Coman y Tchouaméni. Messi levantó la Copa.',
-    highlightsYoutubeId: 'R0HHKMVKJHA',
-    fullMatchYoutubeId: 'R0HHKMVKJHA',
-    fullMatchSearch: 'Argentina vs France 2022 World Cup Final full match',
+      'Después del 1-2 ante Arabia Saudita (el mayor shock del Mundial), Argentina necesitaba ganar o quedaba eliminada. En el 64, Messi recibió, se acomodó y clavó un remate cruzado bajo ante Ochoa. Enzo Fernández, en su primer Mundial, clavó un obús desde 25 metros. El sueño de Qatar seguía vivo.',
+    highlightsYoutubeId: null,
+    fullMatchYoutubeId: null,
+    fullMatchSearch: 'Argentina vs Mexico 2022 World Cup group stage Messi goal full match',
   },
 ]
