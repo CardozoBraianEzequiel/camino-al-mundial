@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { argGroupStage, pathFirst, pathSecond } from '../data/worldCup2026'
+import Flag from './Flag'
 
 const CELESTE = '#74ACDF'
 const ORO = '#F6B940'
@@ -17,10 +18,12 @@ function MatchCard({ match }) {
         border: `1px solid rgba(116,172,223,0.2)`,
       }}
     >
-      <div className="text-3xl w-10 text-center">{match.opponentFlag}</div>
+      <div className="w-10 flex items-center justify-center">
+        <Flag name={match.opponent} size={24} />
+      </div>
       <div className="flex-1 min-w-0">
-        <div className="font-bold text-white">
-          🇦🇷 Argentina vs {match.opponent} {match.opponentFlag}
+        <div className="font-bold text-white flex items-center gap-1.5 flex-wrap">
+          <Flag name="Argentina" size={16} /> Argentina vs {match.opponent} <Flag name={match.opponent} size={16} />
         </div>
         <div className="text-sm mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
           {match.dateLabel} · {match.timeArg}
@@ -57,7 +60,7 @@ function OpponentChip({ opponent, selected, onSelect }) {
         boxShadow: selected ? `0 0 10px ${CELESTE}18` : 'none',
       }}
     >
-      <span>{opponent.flag}</span>
+      <Flag name={opponent.name} size={16} />
       <span>{opponent.name}</span>
     </button>
   )
@@ -196,7 +199,7 @@ export default function CaminoArgentina() {
           >
             {argGroupStage.groupTeams.map(t => (
               <div key={t.name} className="flex items-center gap-1.5">
-                <span>{t.flag}</span>
+                <Flag name={t.name} size={16} />
                 <span
                   className="text-sm font-semibold"
                   style={{ color: t.name === 'Argentina' ? CELESTE : 'rgba(255,255,255,0.7)' }}

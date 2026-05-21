@@ -1,31 +1,6 @@
 import { useState } from 'react'
 import { dailyContent, getUnlockedDayCount } from '../data/daily'
-
-const CELESTE = '#74ACDF'
-const ORO     = '#F6B940'
-
-const FLAGS = {
-  'Argentina':           '🇦🇷',
-  'Alemania':            '🇩🇪',
-  'Alemania Occidental': '🇩🇪',
-  'Francia':             '🇫🇷',
-  'Países Bajos':        '🇳🇱',
-  'Inglaterra':          '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
-  'Brasil':              '🇧🇷',
-  'Italia':              '🇮🇹',
-  'España':              '🇪🇸',
-  'Uruguay':             '🇺🇾',
-  'Croacia':             '🇭🇷',
-  'Nigeria':             '🇳🇬',
-  'Grecia':              '🇬🇷',
-  'Australia':           '🇦🇺',
-  'Suiza':               '🇨🇭',
-  'Bélgica':             '🇧🇪',
-  'México':              '🇲🇽',
-  'Serbia y Montenegro': '🇷🇸',
-}
-
-const flag = name => FLAGS[name] ?? ''
+import Flag from './Flag'
 
 // ── Jersey SVG ────────────────────────────────────────────────────────────────
 function Jersey({ kit }) {
@@ -115,7 +90,10 @@ function SquadPanel({ squad, isArgentine }) {
           <Jersey kit={squad.kit} />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap mb-1">
-              <span className="text-white font-bold text-sm">{flag(squad.country)} {squad.country} {squad.year}</span>
+              <span className="text-white font-bold text-sm flex items-center gap-1.5">
+                <Flag name={squad.country} size={16} />
+                {squad.country} {squad.year}
+              </span>
               <span
                 className="text-xs font-bold px-2 py-0.5 rounded-full"
                 style={{
@@ -198,8 +176,10 @@ function MatchPanel({ match }) {
       </p>
 
       <div className="mb-1">
-        <span className="text-white font-black text-base">
-          🇦🇷 Argentina {match.score} {flag(match.opponent)} {match.opponent}
+        <span className="text-white font-black text-base flex items-center gap-2 flex-wrap">
+          <Flag name="Argentina" size={18} /> Argentina
+          <span style={{ color: 'rgba(255,255,255,0.5)' }}>{match.score}</span>
+          <Flag name={match.opponent} size={18} /> {match.opponent}
         </span>
         {match.scoreDetail && (
           <span className="text-xs ml-2" style={{ color: 'rgba(255,255,255,0.35)' }}>{match.scoreDetail}</span>
