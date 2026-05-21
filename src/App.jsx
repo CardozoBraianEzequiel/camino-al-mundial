@@ -1,5 +1,6 @@
 import Countdown from './components/Countdown'
 import DailyView from './components/DailyView'
+import CaminoArgentina from './components/CaminoArgentina'
 import SolDeMayo from './components/SolDeMayo'
 
 const CELESTE = '#74ACDF'
@@ -21,15 +22,26 @@ export default function App() {
               Camino al Mundial
             </span>
           </div>
-          <a
-            href="#dias"
-            className="text-sm font-semibold px-3 py-1.5 rounded-lg transition-colors"
-            style={{ color: `${CELESTE}99` }}
-            onMouseEnter={e => e.target.style.color = CELESTE}
-            onMouseLeave={e => e.target.style.color = `${CELESTE}99`}
-          >
-            Días →
-          </a>
+          <div className="flex items-center gap-1">
+            <a
+              href="#dias"
+              className="text-sm font-semibold px-3 py-1.5 rounded-lg transition-colors"
+              style={{ color: `${CELESTE}99` }}
+              onMouseEnter={e => e.target.style.color = CELESTE}
+              onMouseLeave={e => e.target.style.color = `${CELESTE}99`}
+            >
+              Días
+            </a>
+            <a
+              href="#camino"
+              className="text-sm font-semibold px-3 py-1.5 rounded-lg transition-colors"
+              style={{ color: `${CELESTE}99` }}
+              onMouseEnter={e => e.target.style.color = CELESTE}
+              onMouseLeave={e => e.target.style.color = `${CELESTE}99`}
+            >
+              Camino →
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -128,6 +140,15 @@ export default function App() {
 
       <main>
         <DailyView />
+
+        {/* Separador */}
+        <div className="flex flex-col gap-[2px] px-0">
+          <div className="h-[3px] w-full" style={{ backgroundColor: `${CELESTE}50` }} />
+          <div className="h-[3px] w-full" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+          <div className="h-[3px] w-full" style={{ backgroundColor: `${CELESTE}50` }} />
+        </div>
+
+        <CaminoArgentina />
       </main>
 
       {/* Footer */}
