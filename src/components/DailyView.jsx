@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { dailyContent, getUnlockedDayCount } from '../data/daily'
 import Flag from './Flag'
 
+const CELESTE = '#74ACDF'
+const ORO     = '#F6B940'
+
 // ── Jersey SVG ────────────────────────────────────────────────────────────────
 function Jersey({ kit }) {
   const { primary, secondary, stripes } = kit
